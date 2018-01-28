@@ -1,0 +1,22 @@
+body{
+		width: 100%;
+	}
+
+	div{
+		width: calc(50% - 6px);
+		float: left;
+		background: blue;
+		box-sizing: 10px;
+		margin: 3px;
+	}
+
+	.gigante{
+		font-family: arial;
+		font-weight: bold;
+		font-size: 50px;
+	}
+
+	.justificado{
+		text-align: justify;
+		background-color: red;
+	}

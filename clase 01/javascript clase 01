@@ -1,0 +1,17 @@
+javascript clase 01
+
+Roberto Diaz
+mensajes.roberto@gmail.com
+github.com/robertods
+
+Network:
+
+nos permite saber las peticiones qeu se realizan, cuales estan completas y cuales no.
+
+Evergreen:
+
+tipo de versionado de chrome y firefox donde se actualiza constantemente sin la necesidad de descargar las versiones.
+
+console warn:
+
+esta bueno para llevar un track de los errores qeu llevaron a ese error. Muestra el stack de los errores.
