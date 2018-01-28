@@ -1,0 +1,17 @@
+Clase 2 apunte
+
+motor de chrome v8
+motor de firefox spidermonkey
+motor de edge chakra
+
+Como funciona busca:
+
+1) detectar funciones declarativas y variables globales
+
+2)ejecucion linea por linea
+
+http://www.etnassoft.com/2011/09/02/funciones-declaradas-vs-funciones-expresadas-en-javascript/
+
+funciones declarativas ocupan memoria constantemente, no tiene sentido usarlas si no son de multiple uso.
+
+funciones expresadas ideales para darle funcionamiento a estructuras individuales.
