@@ -1,0 +1,21 @@
+.detalle{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+#detalle2{
+	display: none;
+}
+
+.fa {
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
