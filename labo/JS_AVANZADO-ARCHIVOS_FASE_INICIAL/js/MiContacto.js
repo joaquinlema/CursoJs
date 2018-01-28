@@ -9,6 +9,7 @@ function activado() {
 
 	nodo_nombre.addEventListener('blur',validarNombre)
 	nodo_email.addEventListener('blur',validarEmail)
+	nodo_mens.addEventListener('blur',validarMens)
 	formulario.addEventListener('submit',validar)
 
 }
@@ -16,6 +17,18 @@ function activado() {
 function validar(e) {
 	
 	e.preventDefault()
+
+	var formNodo = e.target
+	var nodo_nombre = formNodo.querySelector('input[name = nombre]')
+	var nodo_email = formNodo.querySelector('input[name = email]')
+	var nodo_mens = formNodo.querySelector('textarea[name = mensaje]')
+
+	if (contieneClase(nodo_nombre,"ok") && contieneClase(nodo_email,"ok") && contieneClase(nodo_mens,"ok")) {
+		formNodo.submit()
+	}else{
+		alert("No puede haber contenedores en rojo o vacios")
+	}
+
 
 }
 
@@ -36,12 +49,29 @@ function validarNombre(argument) {
 		}
 
 		agregarClase(nombreValor,"error")
-
 	}
 }
 
 function validarMens(argument) {
-	// body...
+	
+	var mensValor = argument.target
+	
+		if (tamañoElem(mensValor) < 200 && !isEmpty(mensValor)) {
+			
+			agregarClase(mensValor,"ok")
+			
+		}else {
+			
+			if(contieneClase(mensValor,"ok")){
+					
+				quitarClase(mensValor,"ok")
+				
+			}
+			
+			agregarClase(mensValor,"error")
+			
+		}
+	
 }
 
 function validarEmail(argument) {
@@ -57,7 +87,7 @@ function validarEmail(argument) {
 		if(contieneClase(emailValor,"ok")){
 				
 			quitarClase(emailValor,"ok")
-				
+			
 		}
 		
 		agregarClase(emailValor,"error")
@@ -84,4 +114,8 @@ function tamañoElem(params) {
 
 function contieneClase(elemento,nombreClase){
 	return elemento.classList.contains(nombreClase)
+}
+
+function isEmpty(params) {
+	return tamañoElem(params) <= 0;
 }
