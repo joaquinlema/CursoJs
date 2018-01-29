@@ -31,9 +31,11 @@ function procesarRespuesta(elementoAjax) {
 
     var caja = document.querySelector('#page')
     caja.innerHTML = "cargando";
+
     if (elementoAjax.target.status == 200 && elementoAjax.target.readyState == 4) {
         caja.innerHTML = "";
-        caja.innerHTML = elementoAjax.target.responseText;   
+        caja.innerHTML = elementoAjax.target.responseText;
+
     }else{
         var nodoSpan = document.createElement("span")
         nodoSpan.classList.add("error")
