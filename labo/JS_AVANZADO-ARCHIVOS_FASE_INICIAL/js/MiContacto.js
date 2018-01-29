@@ -23,14 +23,9 @@ function validar(e) {
 	var nodo_email = formNodo.querySelector('input[name = email]')
 	var nodo_mens = formNodo.querySelector('textarea[name = mensaje]')
 
-	if (contieneClase(nodo_nombre,"ok") && contieneClase(nodo_email,"ok") && contieneClase(nodo_mens,"ok")) {
-		formNodo.submit()
-	}else{
-		alert("No puede haber contenedores en rojo o vacios")
+	return (contieneClase(nodo_nombre,"ok") && contieneClase(nodo_email,"ok") && contieneClase(nodo_mens,"ok")) ? formNodo.submit() : alert("No puede haber contenedores en rojo o vacios")
 	}
 
-
-}
 
 function validarNombre(argument) {
 
@@ -39,16 +34,16 @@ function validarNombre(argument) {
 	if(tamañoElem(nombreValor) > 4 && isNaN(nombreValor.value.charAt(0)) ){
 		
 		agregarClase(nombreValor,"ok")
-
+		
 	}else {
 
 		if(contieneClase(nombreValor,"ok")){
 		
 			quitarClase(nombreValor,"ok")
-		
 		}
 
 		agregarClase(nombreValor,"error")
+		
 	}
 }
 
@@ -59,7 +54,7 @@ function validarMens(argument) {
 		if (tamañoElem(mensValor) < 200 && !isEmpty(mensValor)) {
 			
 			agregarClase(mensValor,"ok")
-			
+		
 		}else {
 			
 			if(contieneClase(mensValor,"ok")){
@@ -69,7 +64,6 @@ function validarMens(argument) {
 			}
 			
 			agregarClase(mensValor,"error")
-			
 		}
 	
 }
@@ -82,6 +76,7 @@ function validarEmail(argument) {
 		
 		agregarClase(emailValor,"ok")
 		
+		
 	}else {
 		
 		if(contieneClase(emailValor,"ok")){
@@ -91,7 +86,6 @@ function validarEmail(argument) {
 		}
 		
 		agregarClase(emailValor,"error")
-		
 	}
 }
 
