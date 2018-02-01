@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom con Jquery</title>
+
+	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+		.peli{
+			width : 200px;
+			border: 1px solid #AAA;
+			border-radius: 12px;
+			display: inline-block;
+			padding: 6px;
+			box-sizing: border-box;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+		/*
+		1. selector css: $("#caja") // obj jquery
+
+		var nodo_p = document.querySelector("p");
+		2. variable nodo: $(nodo_p) // obj jquery
+
+	    3. function: $(function(){ ... }); //ejecuta la funcion al ready
+
+		$(nodo).click(function(){ ... });
+		$(document).ready(function(){ ... });
+		$(document).on("ready", function(){ ... });
+		*/
+
+		$(function(){
+
+			$.ajax({
+				"type": "GET",   /*"method": "GET",*/
+				"url": "catalogo_peliculas.json",
+				"data": {
+					     "id":5, 
+				         "nombre":"juan"
+				        },
+				"dataType": "json",
+				"success": construirSitio,
+				"error": function(error_ocurrido){
+					console.log(error_ocurrido);
+				},
+				"complete": function(){
+					console.log("termino!");
+				}
+			});
+
+function construirSitio(data){
+	console.log(data);
+
+	var nodo_ul = document.createElement("ul");
+	document.body.appendChild(nodo_ul);
+
+	$.each(data.peliculas, function(i, obj){
+
+		var $nodo_li = $('<li class="peli"></li>');
+		/*$nodo_li.html('<h2>'+obj.title+'</h2>'+
+					  '<img src="'+obj.poster+'" width="100"/>'+
+					  '<p>'+obj.synopsis+'</p>'
+			         );*/
+		$nodo_li.html(`<h2>${obj.title}</h2>
+					  <img src="${obj.poster}" width="100"/>
+					  <p>${obj.synopsis}</p>`
+			         );	         
+		$(nodo_ul).append($nodo_li);
+
+	});
+
+	
+}
+		});
+		
+	</script>
+
+</head>
+<body>
+	
+	
+</body>
+</html>
