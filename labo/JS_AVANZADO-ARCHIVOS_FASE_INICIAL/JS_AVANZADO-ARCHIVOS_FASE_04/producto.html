@@ -8,8 +8,6 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<script src="js/jquery.min.js"></script>
-		<script src="js/clase04producto.js"></script>
-		
 	</head>
 	<body>
 		<div class="header">
@@ -37,13 +35,13 @@
 			<section id="page">
 				<div class="single_top">
 					<div class="single_grid">
-						<div class="grid images_3_of_2" id="imagenConten">
+						<div class="grid images_3_of_2">
 							<ul id="etalage">
 								<li><img class="etalage_thumb_image" src="images/productos/sin-foto.jpg" class="img-responsive" /></li>
 							</ul>
 							<div class="clearfix"></div>		
 						</div>
-						<div class="desc1 span_3_of_2" id="acaesta">
+						<div class="desc1 span_3_of_2">
 							<h4>Producto #1</h4>
 							<div class="cart-b">
 								<div class="left-n ">$499</div>
@@ -102,5 +100,41 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			/*
+				3)	Obtener desde la URL del navegaor el valor ID del hashtag.
+					Si no hay un hashtag, rediraccionar a "productos.html"
+					Obtener el JSON de productos via AJAX.
+					Una vez obtenido, buscar el producto que tenga el ID leido desde el hastag en la URL.
+					Reemplazar toda la informacion estatica del documento HTML por la del producto encontrado.
+			*/
+			if( location.hash ){
+				var ID = location.hash.substring(1);
+				var ajax = new XMLHttpRequest();
+				ajax.open("POST", "productos.json");
+				ajax.onload = function() {
+					if( ajax.status == 200 ){
+						var productos = JSON.parse( ajax.responseText );
+						var producto = productos.find(buscarProducto);
+
+						document.querySelector("#etalage img").src = "images/productos/" + producto.ID + ".jpg";
+						document.querySelector(".desc1 h4").innerHTML = producto.Marca + " - " + producto.Nombre;
+						document.querySelector(".left-n").innerHTML = "$" + producto.Precio;
+						document.querySelector(".desc1 h6").innerHTML = producto.Stock + " unid. en stock";
+						document.querySelector(".desc1 p").innerHTML = producto.Detalle;
+						
+
+					}
+				}
+				ajax.send();
+
+				function buscarProducto(producto){
+					return producto.ID === ID;
+				}
+
+			} else {
+				location = "productos.html";
+			}
+		</script>
 	</body>
 </html>
