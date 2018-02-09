@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>ComercioIT | Tu E-Shop en JavaScript</title>
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/misEstilos.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<script src="js/jquery.min.js"></script>
@@ -38,13 +39,13 @@
 				<div class="cat-product">
 					<div class="w_content">
 						<div class="category">
-							<ul class="w_nav">
+							<ul class="w_nav" id="listadoDeOrden">
 								<li>Ordernar por:</li>
-								<li class="Mrecientes"><a href="#">Más recientes</a></li>
+								<li class="Mrecientes"><a href="#masreciente">Más recientes</a></li>
 								&nbsp;|&nbsp;
-								<li class="Menprecio"><a href="#">Menor precio</li>
+								<li class="Menprecio"><a href="#menorprecio">Menor precio</a></li>
 								&nbsp;|&nbsp;
-								<li class="Mayprecio"><a href="#">Mayor precio</a></li> 
+								<li class="Mayprecio"><a href="#mayorprecio">Mayor precio</a></li> 
 								<div class="clearfix"></div>	
 							</ul>
 							<div class="clearfix"></div>	
@@ -53,7 +54,7 @@
 					<div id="listadoProductos" class="grid-product">
 						<!-- Producto #1 -->
 						<div class="product-grid producto">
-							<div class="content_box">producto.html
+							<div class="content_box">
 								<div class="left-grid-view grid-view-left">
 									<a href="producto.html">
 										<img src="images/productos/sin-foto.jpg" class="img-responsive watch-right" alt=""/>

@@ -1,5 +1,7 @@
+var dataProductos = [];
+
 $(function () {
-	
+
 	$.ajax({
 		"type": "GET",   /*"method": "GET",*/
 		"url": "json/ajax/productos/productosJson.json",
@@ -17,6 +19,7 @@ $(function () {
 
 function construirSitio(productosElem) {
 
+dataProductos = productosElem;
 //A partir de la clonación del nodo ".producto", mostrar el listado de productos en el nodo "#listadoProductos".
 var nodo_producto = document.querySelector('.producto').cloneNode(true);
 var nodo_productos = document.querySelector('#listadoProductos')
@@ -32,8 +35,12 @@ var i;
 		productoItem.id = productosElem[i].ID;
 
 		productoItem.querySelector('H4 A').innerText = "" + productosElem[i].NOMBRE
+		
 		productoItem.querySelector('IMG').src = "images/productos/"+productosElem[i].ID+".jpg"
+		productoItem.querySelector('IMG').classList.add('tamañoImg')
+
 		productoItem.querySelector('P').innerText = "" + productosElem[i].DESCRIPCION
+		
 		productoItem.querySelector('SPAN').innerText = "$" + productosElem[i].PRECIO
 
 		//Hacer que todos los hipervínculos de cada producto tengan un "hashtag" con el ID propio (ej: href="producto.html#P001").
@@ -44,13 +51,19 @@ var i;
 
 	}
 
+var linkOrden = document.getElementById('listadoDeOrden').getElementsByTagName("a")
+
+funcionamientoLinks(linkOrden);
+
 }
 
 //Definir un mecanismo de funciones para que al clickear los links "Más Recientes", "Menor Precio" y "Mayor Precio" se altere el orden de los productos.
+function funcionamientoLinks(linkOrden) {
 
-var linkOrden = document.querySelectorAll('w_nav a')
-for(var link in linkOrden){
-	link.onclick = ordenarProductos;
+	for(var l = 0; l < linkOrden.length; l++){
+		linkOrden[l].onclick = ordenarProductos
+	}
+
 }
 
 function ordenarProductos(argument) {
@@ -61,47 +74,47 @@ function ordenarProductos(argument) {
 
 	if (tipo == "Mrecientes") 
 	{
-		productosElem.sort(Mrec)
+		dataProductos.sort(Mrec)
 	}
 
 	if (tipo == "Menprecio") 
 	{
-		productosElem.sort(Menp)
+		dataProductos.sort(Menprecio)
 	}
 
 	if (tipo == "Mayprecio") 
 	{
-		productosElem.sort(Mayp)
+		dataProductos.sort(Mayprecio)
 	}
 
-	construirSitio(productosElem)
+	construirSitio(dataProductos)
 }
 
 function Mrec(a,b) {
-	if (a.id < b.id) {
+	if (a.ID < b.ID) {
 		return 1
 	}
-	if (a.id > b.id) {
+	if (a.ID > b.ID) {
 		return -1
 	}
 	return 0
 }
 
-function Menprecio(argument) {
-	if (a.precio < b.precio) {
+function Mayprecio(a,b) {
+	if (a.PRECIO < b.PRECIO) {
 		return 1
 	}
-	if (a.precio > b.precio) {
+	if (a.PRECIO > b.PRECIO) {
 		return -1
 	}
 	return 0
 }
 
-function Mayp(argument) {
-	if (a.precio > b.precio) {
+function Menprecio(a,b) {
+	if (a.PRECIO > b.PRECIO) {
 		return 1
 	}
-	if (a.precio < b.precio) {
+	if (a.PRECIO < b.PRECIO) {
 		return -1
 	}
 	return 0
