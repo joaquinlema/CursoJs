@@ -16,6 +16,7 @@ $(function() {
 })
 
 function buscarId(productosElem) {
+
 	var prodId = getParameterByName('id');
 	var elemId;
 	var i;
@@ -38,10 +39,11 @@ function buscarId(productosElem) {
 	contenedorProd.innerHTML = "";
 
 	productoItemImage.querySelector('#etalage li img').src = "images/productos/"+elemId.ID+".jpg"
+	productoItemImage.querySelector('#etalage li img').classList.add('tamañoProd')	
 
 	productoItem.querySelector('h4').innerHTML = elemId.NOMBRE;
-	productoItem.querySelector('.left-n').innerHTML = elemId.PRECIO
-	productoItem.querySelector('h6').innerHTML = elemId.STOCK
+	productoItem.querySelector('.left-n').innerHTML = "$" + elemId.PRECIO
+	productoItem.querySelector('h6').innerHTML = "Stock: "+ elemId.STOCK + " unidades"
 	productoItem.querySelector('p').innerHTML = elemId.DESCRIPCION
 
 
