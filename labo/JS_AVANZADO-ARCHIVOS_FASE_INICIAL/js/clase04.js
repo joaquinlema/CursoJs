@@ -14,7 +14,6 @@ $(function () {
 			console.log("termino!");
 		}
 	});
-
 })
 
 function construirSitio(productosElem) {
