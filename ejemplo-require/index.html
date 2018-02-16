@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Require ejemplo</title>		
+		
+		<script data-main="assets/js/common" src="assets/js/lib/require.js" ></script>
+		<script>
+							
+			require(['page/home'], function(recursos){ //aqui este bloque requiere el modulo HOME
+				$ = recursos.librerias.jquery;
+				UNDER = recursos.librerias.underscore;
+				
+				$("#primero").html(recursos.data);
+				$("#segundo").html(recursos.cantidad);
+				
+				$("#tercero").html(UNDER.range(0,10));
+				
+			});
+				
+		</script>
+	</head>
+	<body>
+		<div id="primero"></div>
+		<div id="segundo"></div>
+		<div id="tercero"></div>
+		
+		
+	</body>
+</html>
