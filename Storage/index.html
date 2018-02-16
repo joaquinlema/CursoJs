@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style>
+		html, body{
+			font-family: Roboto;
+			text-align: center;			
+		}
+		input{
+			height: 32px;
+			border-radius: 4px;
+			padding: 5px;
+		}
+	</style>
+	<script>
+
+		localStorage.removeItem("nick");
+		
+		function validacion(formulario, e){
+			e.preventDefault();
+
+			cajaTexto = formulario.querySelector("input[name=txtnombre]");
+			if(cajaTexto.value == ""){
+				alert("El nick es necesario :)");
+				return;
+			}
+
+			localStorage.setItem("nick", cajaTexto.value);
+						
+			formulario.submit();
+			return;
+		}
+	</script>
+</head>
+<body>
+	<h1>Cual es tu nick?</h1>
+	<form action="sitio.html" method="POST" onsubmit="validacion(this,event);">
+		<input type="text" name="txtnombre" placeholder="Ej: Rob" />
+		<input type="submit" value="Entrar!" />
+	</form>
+</body>
+</html>
