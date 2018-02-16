@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OOP V3</title>
+</head>
+<body>
+	<script>
+		function Persona(nomb, edad){
+			this.nombre;
+			this.edad;
+			var algo = "amigos ";	
+			
+			var constructor = function(n, e){
+				this.nombre = n;
+				this.edad = e;
+			};
+
+			constructor(nomb, edad);
+
+			var bienvenida = function(){
+				return "Hola! "+algo;
+			};
+			var validacion = function(edad){
+				return (edad > 18);
+			};
+			this.saludar = function(){
+				console.log(bienvenida(),this.nombre, this.edad);
+			};
+			this.cambiarEdad = function(nuevaEdad){
+				if(validacion(nuevaEdad)){
+					this.edad = nuevaEdad;
+				}				
+			};
+		}
+
+		var nico = new Persona("Nicolas", 18); // window.Persona.call({}, "Nicolas", 18);		
+		nico.saludar();
+
+		var mica = new Persona("Micaela", 21);		
+		mica.saludar();
+	</script>
+</body>
+</html>

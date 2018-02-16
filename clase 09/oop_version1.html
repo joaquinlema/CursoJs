@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OOP V1</title>
+</head>
+<body>
+	<script>
+		var persona = {
+			"nombre": null, 
+			"edad": null,
+			"saludar": function(){
+				console.log(this.nombre, this.edad);
+			}
+		};
+
+		var nico = persona;
+		nico.nombre = "Nicolas";
+		nico.edad = 18;
+		nico.saludar();
+
+		var mica = persona;
+		mica.nombre = "Micaela";
+		mica.edad = 21;
+		mica.saludar();
+		
+
+	</script>
+</body>
+</html>

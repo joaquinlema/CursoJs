@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prototipos 1</title>
+</head>
+<body>
+	
+	<script>
+
+		var Curso = function(){
+			this.horario = "19:00";
+			this.dias = "myj";
+		};
+
+		var CursoProgramacion = function(){
+			this.lenguage = "Javascript";	
+		};
+
+		CursoProgramacion.prototype = new Curso();
+		
+		var CursoViernes = new CursoProgramacion();
+		
+		console.log(CursoViernes.lenguage); //"Javascript"
+		console.log(CursoViernes.horario); //19:00
+		console.log(CursoViernes.dias); //19:00
+
+
+	</script>
+</body>
+</html>

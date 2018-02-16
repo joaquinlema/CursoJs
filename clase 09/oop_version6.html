@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OOP V4</title>
+	<script src="polyfill.js"></script>
+</head>
+<body>
+<script>
+function Persona(opciones){
+	var _this = this; //self
+	_this.nombre;
+	_this.edad;
+	var algo = "amigos ";	
+		
+	// CONSTRUCT : funcion autoejecutable
+	(function(opc){
+
+		var opcionesDefault = {
+			nombre : "sin nombre",
+			edad : 99
+		};
+		var opc_final = Object.assign(opcionesDefault, opc);
+
+		_this.nombre = opc_final.nombre;
+		_this.edad = opc_final.edad;
+	})(opciones);
+
+	var bienvenida = function(){
+		return "Hola! "+algo;
+	};
+	var validacion = function(edad){
+		return (edad > 18);
+	};
+	_this.saludar = function(){
+		console.log(bienvenida(),_this.nombre, _this.edad);
+	};
+	_this.cambiarEdad = function(nuevaEdad){
+		if(validacion(nuevaEdad)){
+			_this.edad = nuevaEdad;
+		}				
+	};
+}
+
+var nico = new Persona({
+	edad: 18, 
+	nombre: "Nicolas"
+}); 
+// window.Persona.call({}, {nombre:"Nicolas", edad:18});		
+nico.saludar();
+
+var alguien = new Persona({
+	edad: 25,
+}); 
+alguien.saludar();
+
+</script>
+</body>
+</html>
