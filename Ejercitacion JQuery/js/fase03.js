@@ -7,7 +7,9 @@ function realizarPedido(e) {
     e.preventDefault();
 
     var nombreArchivo = e.target.pathname;
-
+    var mensaje = "cargando";
+    $('#page').html(mensaje);
+    
     $.ajax({
         "type": "GET",   /*"method": "GET",*/
         "url": nombreArchivo,
@@ -16,6 +18,8 @@ function realizarPedido(e) {
         "complete": function(){
             console.log("termino!");
         }
+    }).always(function (jqXHR) {
+        console.log("always");
     });
 }
 
@@ -28,9 +32,6 @@ function mostrarError(){
 }
 
 function irASitio(data) {
-
-    var mensaje = "cargando";
-    $('#page').html(mensaje);
    
     $('#page').html("");   
     $('#page').html(data);
