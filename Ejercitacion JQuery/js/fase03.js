@@ -7,7 +7,7 @@ function realizarPedido(e) {
     e.preventDefault();
 
     var nombreArchivo = e.target.pathname;
-    var mensaje = "cargando";
+    var mensaje = '<img src="images/productos/cargando.gif" alt="cargando..." height="420" width="420">' ;
     $('#page').html(mensaje);
     
     $.ajax({
