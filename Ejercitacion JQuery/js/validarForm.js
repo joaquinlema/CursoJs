@@ -83,6 +83,6 @@ function validarEmail(params) {
 }
 
 function validarContraseña(params) {
-    var regexPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
-    return regexPattern.test(params)
+    var regexPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/;
+    return regexPattern.test(params.val());
 }
