@@ -34,7 +34,7 @@ $().ready(function() {
         var flagInterno =  flagNombre + flagEmail + flagContraseña + flagApellido; 
         
         if(validarFormulario(flagInterno)){
-            EnviarDatos(nombre,apellido)
+            EnviarDatos(nombre.val(),apellido.val())
        }
 
     })
@@ -42,21 +42,23 @@ $().ready(function() {
 
 function EnviarDatos(nombre,apellido){
     $.ajax({
-        "type": "POST",   
-        "url": ajax/nombreArchivo2.txt,
+        "type": "GET",   
+        "url": "ajax/nombreArchivo2.json",
         "data": {"nombre":nombre,"apellido":apellido},
-        "dataType" : "json",
-        "success": respuestaOk,
-        "error": mostrarError,
-        "complete": function(){
-            console.log("termino!");
-        }
-    })
+        "dataType": "json"
+    }).done(respuestaOk)
+    .fail(mostrarError)
+}
+
+function mostrarError(params) {
+    var imagenError = '<img src="images/productos/error.gif" alt="cargando..." height="420" width="420">'
+    $('#page').html("");   
+    $('#page').html(imagenError);  
 }
 
 function respuestaOk(data) {
     $('#page').html("");
-
+   
     if (data.valor) {
         $('#page').html("Gracias por su consulta, responderemos a la brevedad :)");
         
