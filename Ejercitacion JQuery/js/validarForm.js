@@ -2,45 +2,45 @@ $().ready(function() {
 
     var flagNombre = false;
     var flagApellido = false;
-    var flageEmail = false;
+    var flagEmail = false;
     var flagContraseña = false;
     var nombre = $('input[name = "nombre"]');
     var apellido = $('input[name = "apellido"]');
 
     nombre.blur(function() {
-        flagNombre = validarNombre($(this))
-        validarClase(flagNombre,$(this))
+        flagNombre = validarNombre($(this));
+        validarClase(flagNombre,$(this));
     });
+
     apellido.blur(function() {
         flagApellido = validarApellido($(this))
         validarClase(flagApellido,$(this))
     });
+
     $('input[name = "email"]').blur(function() {
-        flageEmail = validarEmail($(this))
-        validarClase(flageEmail,$(this))
+        flagEmail = validarEmail($(this))
+        validarClase(flagEmail,$(this))
     });
+
     $('input[name = "pass"]').blur(function() {
         flagContraseña = validarContraseña($(this))
         validarClase(flagContraseña,$(this))
     });
     
-    var flag =  flagNombre + flageEmail + flagContraseña + flagApellido; 
-
     $('form').submit(function(args){
         
         args.preventDefault();
-       
-        var formulario = args.target;
-        var flagInterno = flag;
+
+        var flagInterno =  flagNombre + flagEmail + flagContraseña + flagApellido; 
         
         if(validarFormulario(flagInterno)){
-            formulario.EnviarDatos(nombre,apellido)
+            EnviarDatos(nombre,apellido)
        }
 
     })
 })
 
-function EnviarDatos(){
+function EnviarDatos(nombre,apellido){
     $.ajax({
         "type": "POST",   
         "url": ajax/nombreArchivo2.txt,
@@ -75,7 +75,7 @@ function validarNombre(params) {
 }
 
 function validarApellido(params) {
-    return validarName(params)
+    return validarApe(params)
 }
 
 function validarEmail(params) {
