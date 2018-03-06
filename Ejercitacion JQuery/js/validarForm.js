@@ -62,7 +62,6 @@ function gestionarRespuesta(data) {
     
     if (data.valor) {
         $('#page').html(imagenaprobado);
-        $('#page').append("<span>Gracias por su consulta, responderemos a la brevedad :)</span>");
         
     } else {
         $('#page').html("Ocurrió un error, escribanos a info@educacionit.com :(");
