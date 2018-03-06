@@ -46,7 +46,7 @@ function EnviarDatos(nombre,apellido){
         "url": "ajax/nombreArchivo2.json",
         "data": {"nombre":nombre,"apellido":apellido},
         "dataType": "json"
-    }).done(respuestaOk)
+    }).done(gestionarRespuesta)
     .fail(mostrarError)
 }
 
@@ -56,11 +56,13 @@ function mostrarError(params) {
     $('#page').html(imagenError);  
 }
 
-function respuestaOk(data) {
+function gestionarRespuesta(data) {
     $('#page').html("");
-   
+    var imagenaprobado = '<img src="images/productos/aprobado.jpg" alt="aprobado" height="420" width="420">'
+    
     if (data.valor) {
-        $('#page').html("Gracias por su consulta, responderemos a la brevedad :)");
+        $('#page').html(imagenaprobado);
+        $('#page').append("<span>Gracias por su consulta, responderemos a la brevedad :)</span>");
         
     } else {
         $('#page').html("Ocurrió un error, escribanos a info@educacionit.com :(");
