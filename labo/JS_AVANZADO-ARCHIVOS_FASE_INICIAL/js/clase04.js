@@ -45,7 +45,7 @@ var i;
 		//Hacer que todos los hipervínculos de cada producto tengan un "hashtag" con el ID propio (ej: href="producto.html#P001").
 		//funcionalmiento de los link en las imagenes
 		productoItem.querySelectorAll('a')[0].href = "producto.html?id="+productosElem[i].ID
-		//link en texto
+		//link en texto	
 		productoItem.querySelectorAll('a')[1].href = "producto.html?id="+productosElem[i].ID
 
 		nodo_productos.appendChild( productoItem )
