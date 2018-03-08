@@ -33,10 +33,26 @@ function construirSitio(data) {
         nodo_item.querySelectorAll('a')[0].href = "producto.html?id="+info.ID;
         nodo_item.querySelectorAll('a')[1].href = "producto.html?id="+info.ID;
 
-        nodo_productosLista.append(nodo_item);        
+        nodo_productosLista.append(nodo_item);    
+        
+        funcionamientoLinks(data);
     }
 }
-
+function funcionamientoLinks(data){
+    $('#comboOrden').change(function () {
+        var valorSelec = $( "select option:selected" ).val();
+        if (valorSelec == "masReciente") {
+                        
+        }
+        if (valorSelec == "menosPrecio") {
+            
+        }
+        if (valorSelec == "mayorPrecio") {
+            
+        }
+      })
+      .change();
+}
 function notificarError(error) {
     mostrarError($('#page'))
 }
