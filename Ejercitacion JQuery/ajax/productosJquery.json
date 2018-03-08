@@ -1,3 +1,31 @@
 [{
-    
+    "ID":1,
+    "NOMBRE":"PHILLIPS",
+    "PRECIO":100,
+    "STOCK":"50 Unidades",
+    "DESCRIPCION":"algo de descripcion"
+},{
+    "ID":2,
+    "NOMBRE":"MORRIS",
+    "PRECIO":200,
+    "STOCK":"20 Unidades",
+    "DESCRIPCION":"algo de descripcion"
+},{
+    "ID":3,
+    "NOMBRE":"MALBORO",
+    "PRECIO":400,
+    "STOCK":"10 Unidades",
+    "DESCRIPCION":"algo de descripcion"
+},{
+    "ID":4,
+    "NOMBRE":"NIKE",
+    "PRECIO":100,
+    "STOCK":"50 Unidades",
+    "DESCRIPCION":"algo de descripcion"
+},{
+    "ID":5,
+    "NOMBRE":"SAMGSUN",
+    "PRECIO":100,
+    "STOCK":"50 Unidades",
+    "DESCRIPCION":"algo de descripcion"
 }]

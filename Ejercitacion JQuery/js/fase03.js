@@ -25,7 +25,7 @@ function realizarPedido(e) {
         "url" : nombreArchivo
     })
     .done(ModificarPage)
-    .fail(mostrarError)
+    .fail(mostrarError($('#page')))
     .always(function(){console.log("complete papa")})
 }
 

@@ -7,6 +7,14 @@ function enviarAlerta() {
 		return false;
 }
 
+function mostrarError(obj){
+
+    var imagenError = '<img src="images/productos/error.gif" alt="cargando..." height="420" width="420">'
+    obj.html("");   
+    obj.html(imagenError);  
+
+}
+
 function validarName(nameObj) {
 	return (nameObj.val().length > 4 && isNaN(nameObj.val().slice(0,1))) ? true : false;
 }
