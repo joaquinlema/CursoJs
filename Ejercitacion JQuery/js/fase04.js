@@ -10,7 +10,7 @@ $().ready(function(){
     });
 })
 
-function construirSitio() {
+function construirSitio(data) {
 
     var nodo_producto_clon = document.querySelector('.producto').cloneNode(true);
     var nodo_productosLista = $('#listadoProductos');
@@ -34,14 +34,14 @@ function construirSitio() {
 
         nodo_productosLista.append(nodo_item);    
         
-        funcionamientoLinks(data);
     }
+
+    funcionamientoLinks(data);
 }
 
 function funcionamientoLinks(data){
 
-    var dataOrdenada = [];
-    dataOrdenada.push(data);
+    var dataOrdenada = data;
 
     $('#comboOrden').change(function () {
         
@@ -57,7 +57,7 @@ function funcionamientoLinks(data){
             dataOrdenada.sort(mayPre);
         }
 
-        //construirSitio(dataOrdenada)
+        construirSitio(dataOrdenada)
       })
 }
 
@@ -65,17 +65,17 @@ function mRec(a,b) {
     if(a.ID < b.ID){
         return 1
     }
-    if(a.ID > B.ID){
+    if(a.ID > b.ID){
         return -1;   
     }
     return 0;
 }
 
 function menPre(a,b) {
-    if(a.PRECIO < b.PRECIO){
+    if(a.PRECIO > b.PRECIO){
         return 1
     }
-    if(a.PRECIO > B.PRECIO){
+    if(a.PRECIO < b.PRECIO){
         return -1;   
     }
     return 0;
@@ -85,7 +85,7 @@ function mayPre(a,b) {
     if(a.PRECIO < b.PRECIO){
         return 1
     }
-    if(a.PRECIO > B.PRECIO){
+    if(a.PRECIO > b.PRECIO){
         return -1;   
     }
     return 0;
