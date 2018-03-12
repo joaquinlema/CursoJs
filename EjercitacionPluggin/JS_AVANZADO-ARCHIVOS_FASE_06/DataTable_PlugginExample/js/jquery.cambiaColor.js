@@ -3,7 +3,9 @@
 (function($) {
     //definimos la extencion de funcionalidad para metodos JQuery
     $.fn.cambioColor = function(){
-        this.css('backgroundColor','red');
+
+        this.css("background-color", "red");
+
         return this;
     };
-}(JQuery));
+}( jQuery ));
