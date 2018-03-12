@@ -26,11 +26,11 @@ function cargarTablero(data) {
 
         columna[0].innerHTML = data[t].Name;
         columna[1].innerHTML = data[t].Position;
- //       nuevoElemento[2].innerHTML = `<td>${data[t].Office}</td>`;
-   //     nuevoElemento[3].innerHTML = `<td>${data[t].Age}</td>`;
-     //   nuevoElemento[4].innerHTML = `<td>${data[t].Startdate}</td>`;
-      //  nuevoElemento[5].innerHTML = `<td>${data[t].Salary}</td>`;
-
+        columna[2].innerHTML = data[t].Office;
+        columna[3].innerHTML = data[t].Age;
+        columna[4].innerHTML = data[t].Startdate;
+        columna[5].innerHTML = data[t].Salary;
+        
         cuerpoTablero.appendChild(nuevoElemento);
     }
 
