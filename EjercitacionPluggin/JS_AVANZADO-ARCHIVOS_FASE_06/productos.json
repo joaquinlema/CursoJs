@@ -1,0 +1,58 @@
+[
+	{
+		"ID" : "P001",
+		"Nombre" : "iPhone",
+		"Marca" : "Apple",
+		"Precio" : 599.99,
+		"Stock" : 1000,
+		"Detalle" : "iPhone es una línea de teléfonos inteligentes de alta gama diseñada y comercializada por Apple Inc. Ejecuta el sistema operativo móvil iOS antes conocido como 'iPhone OS' hasta mediados de 2010."
+	},
+	{
+		"ID" : "P002",
+		"Nombre" : "iPad",
+		"Marca" : "Apple",
+		"Precio" : 699.99,
+		"Stock" : 900,
+		"Detalle" : "iPad es una línea de tabletas diseñadas y comercializadas por Apple Inc. Se sitúa en una categoría entre un teléfono inteligente y una computadora portátil, enfocado más al acceso que a la creación de aplicaciones y temas."
+	},
+	{
+		"ID" : "P003",
+		"Nombre" : "Nexus 5",
+		"Marca" : "Google",
+		"Precio" : 399.99,
+		"Stock" : 800,
+		"Detalle" : "Google Nexus era una línea de dispositivos móviles que utilizan el sistema operativo Android desarrollado por Google en colaboración con diferentes fabricantes de hardware. Los dispositivos Nexus son los primeros dispositivos Android en recibir actualizaciones del sistema operativo."
+	},
+	{
+		"ID" : "P004",
+		"Nombre" : "Galaxy S5",
+		"Marca" : "Samsung",
+		"Precio" : 459.99,
+		"Stock" : 700,
+		"Detalle" : "Samsung Galaxy es una serie de dispositivos móviles producida por Samsung Electronics, los cuales usan el sistema operativo Android junto con la capa de personalización TouchWiz de Samsung."
+	},
+	{
+		"ID" : "P005",
+		"Nombre" : "Moto G",
+		"Marca" : "Motorola",
+		"Precio" : 269.90,
+		"Stock" : 600,
+		"Detalle" : "El Motorola Moto G es un teléfono inteligente de gama media, parte de la familia Moto surgido de la colaboración entre Google y Motorola a raíz de su adquisición."
+	},
+	{
+		"ID" : "P006",
+		"Nombre" : "L40",
+		"Marca" : "LG",
+		"Precio" : 199.90,
+		"Stock" : 500,
+		"Detalle" : "LG L40 (D160) es un smartphone de gama baja medio comercializado en Europa en el de abril de 2014 a un costo de € 99 y es parte de la serie L de tercera generación. Tiene como un sistema operativo Android 4.4.2 Kitkat."
+	},
+	{
+		"ID" : "P007",
+		"Nombre" : "Watch",
+		"Marca" : "Apple",
+		"Precio" : 299.90,
+		"Stock" : 400,
+		"Detalle" : "Apple Watch es el primer smartwatch creado por Apple. Todas las correas son intercambiables y son compatibles con todos los modelos de 38 y 42mm respectivamente."
+	}
+]
