@@ -1,14 +1,17 @@
 <html>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.cambiaColor.js"></script>
+    <script src="js/jquery.doyEstilo.js"></script>
     <script>
      $(function(){
-         $('a').cambioColor();
-
+        $('a').cambioColor();
+        //$('#elementoCopiar').cambioColor();
+        $('td').doyEstilo();
      })   
     </script>
     <body>
         <a>algo</a>
+        <table>
             <tbody>
                     <tr id="elementoCopiar">
                         <td>Tiger Nixon</td>
@@ -19,5 +22,6 @@
                         <td>$320,800</td>
                     </tr>
             </tbody>
+        </table>
     </body>
 </html>
