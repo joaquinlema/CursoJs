@@ -8,30 +8,35 @@ $(function() {
      .always(function() {
          console.log("ajax ok")
      })
-
-     $('#myTable').DataTable();
 })
 
 function cargarTablero(data) {
     //COPIO LA ESTRUCTURA DEL ELEMENTO PARA CARGAR LOS DATOS
-    var replicarElemento = document.getElementById('elementoCopiar').cloneNode();
+    var replicarElemento = document.querySelector('#elementoCopiar').cloneNode(true);
 
-    var cuerpoTablero = document.getElementsByTagName('tbody');
+    var cuerpoTablero = document.querySelector('tbody');
     //LIMPIO EL TBODY
     cuerpoTablero.innerHTML = "";
 
     for(var t = 0 ; t < data.length; t++){
         
-        var nuevoElemento = replicarElemento;
-        
-        nuevoElemento.querySelectorAll(td);
-        nuevoElemento[0].text = data.Name;
-        nuevoElemento[1].text = data.Position;
-        nuevoElemento[2].text = data.Office;
-        nuevoElemento[3].text = data.Age;
-        nuevoElemento[4].text = data.Startdate;
-        nuevoElemento[5].text = data.Salary;
-        
+        var nuevoElemento = replicarElemento.cloneNode(true);
+
+        var columna = nuevoElemento.querySelectorAll('td');
+
+        columna[0].innerHTML = data[t].Name;
+        columna[1].innerHTML = data[t].Position;
+ //       nuevoElemento[2].innerHTML = `<td>${data[t].Office}</td>`;
+   //     nuevoElemento[3].innerHTML = `<td>${data[t].Age}</td>`;
+     //   nuevoElemento[4].innerHTML = `<td>${data[t].Startdate}</td>`;
+      //  nuevoElemento[5].innerHTML = `<td>${data[t].Salary}</td>`;
+
         cuerpoTablero.appendChild(nuevoElemento);
     }
+
+    $('#myTable').DataTable();
+}
+
+function notificarError(params) {
+    console.log("Error: "+ params)
 }
